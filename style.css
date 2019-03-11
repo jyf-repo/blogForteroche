@@ -9,3 +9,9 @@ h1, h3
     text-align: center;
     color: darkseagreen;
 }
+form
+{
+    padding: 10px;
+    text-align: center;
+    background-color: darkseagreen;
+}

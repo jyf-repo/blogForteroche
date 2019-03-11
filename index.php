@@ -7,6 +7,15 @@
     </head>
 <body>
 <h1>Billet simple pour l'Alaska</h1>
+<div id="formulaire">
+    <form action="index.php?" method="post">
+        <input type="hidden" name="id">
+        <input type="text" placeholder="Titre" name="title"><br/><br/>
+        <input type="date" name="date"><br/><br/>
+        <textarea rows="15" cols="33" name="content">Contenu du texte à remplir</textarea><br/><br/>
+        <input type="submit" value="Envoyer"><br/>
+    </form>
+</div>
 <div id="Billets">
 
 <?php

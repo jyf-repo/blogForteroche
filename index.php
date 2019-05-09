@@ -1,12 +1,5 @@
-<html>
-
-    <head>
-        <meta charset="utf-8">
-        <title>Billet simple pour l'Alaska - Jean Forteroche</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-<body>
-<h1>Billet simple pour l'Alaska</h1>
+<?php $title='Billet simple pour l\'Alaska - Jean Forteroche' ?>
+<?php ob_start(); ?>
 <div id="formulaire">
     <form action="index.php?" method="post">
         <input type="hidden" name="id">
@@ -36,6 +29,5 @@ while ($ticketView=$edit->fetch())
 
 </div>
 
-</body>
-
-</html>
+<?php $content= ob_get_clean() ?>
+<?php require('template.php') ?>

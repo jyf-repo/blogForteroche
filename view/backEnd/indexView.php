@@ -5,7 +5,6 @@
     <form action="index.php?action=newPost" method="post">
         <input type="hidden" name="id">
         <input type="text" placeholder="Titre" name="title"><br/><br/>
-        <input type="date" name="date"><br/><br/>
         <textarea rows="15" cols="33" name="content">Contenu du texte à remplir</textarea><br/><br/>
         <input type="submit" value="Envoyer"><br/>
     </form>

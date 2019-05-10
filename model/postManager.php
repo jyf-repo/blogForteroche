@@ -12,4 +12,13 @@ class PostManager extends DbConnect
         $list=$db->query('SELECT * FROM ticket');
         return $list;
 }
+    public function postInsert($title, $content)
+    {
+        $db=$this->connect();
+        $insert=$db->prepare('INSERT INTO ticket (title, content, date_creation)  VALUES (:title, :content, NOW()) ');
+        $insert->execute(array(
+            'title'=>$title,
+            'content'=>$content
+        ));
+    }
 }

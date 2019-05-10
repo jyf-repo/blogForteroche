@@ -1,6 +1,6 @@
 <?php 
 
-require_once('controller/frontEnd.php');
+require_once('controller/backEnd.php');
 try
 {
     
@@ -9,7 +9,7 @@ try
     {
         if($_GET['action']=='newPost')
         {
-
+            addNewPost($_POST['title'],$_POST['content']);
         }
     }
     else
@@ -20,5 +20,5 @@ try
 catch (Exception $e)
 {
     $errorMessage= $e->getMessage();
-    require('view/errorView.php');
+    require('view/backEnd/errorView.php');
 }

@@ -1,4 +1,7 @@
 <?php
+
+namespace jyfweb\blogForteroche\model;
+
 class DbConnect
 {
     const DB_HOST='mysql:host=localhost; dbname=forteroche';
@@ -10,7 +13,7 @@ class DbConnect
 
         try
         {
-        $data = new PDO(self::DB_HOST, self::DB_USER, self::DB_PASS);
+        $data = new \PDO(self::DB_HOST, self::DB_USER, self::DB_PASS);
         return $data;
         }
 

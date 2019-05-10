@@ -1,5 +1,9 @@
-<?php 
+<?php
+
+namespace jyfweb\blogForteroche\model;
+
 require_once('dbConnect.php');
+
 class PostManager extends DbConnect
 {
     public function postsList()

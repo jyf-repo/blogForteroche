@@ -1,15 +1,24 @@
 <?php 
 
 require_once('controller/frontEnd.php');
-
-if (isset($_GET['action']))
+try
 {
-    if($_GET['action']=='newPost')
+    
+
+    if (isset($_GET['action']))
     {
-        
+        if($_GET['action']=='newPost')
+        {
+
+        }
+    }
+    else
+    {
+        listPosts();
     }
 }
-else
+catch (Exception $e)
 {
-    listPosts();
+    $errorMessage= $e->getMessage();
+    require('view/errorView.php');
 }

@@ -34,9 +34,15 @@ while ($dataPosts=$listPosts->fetch())
         <textarea rows="5" cols="50" name="content"><?=$dataPosts['content']?></textarea><br/><br/>
         <input type="submit" value="Valider les modifications">
     </form>
+    <hr>
                 <?php
-                }
+                } else {
+                echo '<hr>';
+            }
+        } else {
+            echo '<hr>';
         }
+    
 }
 
 ?>

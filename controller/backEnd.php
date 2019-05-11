@@ -14,7 +14,7 @@ function addNewPost($title, $content)
     
     $postManager= new \jyfweb\blogForteroche\model\PostManager();
     $insertPost=$postManager->postInsert($title,$content);
-    listPosts();
+    header('location: index.php');/*header pour eviter de recharger les données* en rechargeant la page*/
 }
 
 function deleteOldPost($postId)
@@ -35,5 +35,5 @@ function updateOldPost($postId,$title,$content)
 {
     $postManager=new \jyfweb\blogForteroche\model\PostManager();
     $modifyPost=$postManager->postModify($postId,$title,$content);
-    listPosts();
+    header('location: index.php');/*header pour eviter de recharger les données* en rechargeant la page*/
 }

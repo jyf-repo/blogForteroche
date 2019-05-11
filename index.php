@@ -3,8 +3,6 @@
 require_once('controller/backEnd.php');
 try
 {
-    
-
     if (isset($_GET['action']))
     {
         if($_GET['action']=='newPost')

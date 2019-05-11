@@ -11,6 +11,19 @@ try
         {
             addNewPost($_POST['title'],$_POST['content']);
         }
+        if($_GET['action']=='delPost')
+        {
+            deleteOldPost($_GET['postId']);
+        }
+        if($_GET['action']=='correctionPost')
+        {
+            $correctionPost=$_GET['demande'];
+            showPostToModify($correctionPost);
+        }
+        if($_GET['action']=='updatePost')
+        {
+            updateOldPost($_GET['postId'],$_POST['title'], $_POST['content']);
+        }
     }
     else
     {

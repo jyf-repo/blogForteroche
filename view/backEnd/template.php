@@ -7,7 +7,7 @@
     </head>
     
     <body>
-    <h1>Billet simple pour l'Alaska</h1>
+    <h1>Billet simple pour l'Alaska: Zone d'administration</h1>
         <?= $content; ?>
     </body>
 

@@ -9,7 +9,7 @@ class PostManager extends DbConnect
     public function postsList()
     {
         $db=$this->connect();
-        $list=$db->query('SELECT * FROM ticket');
+        $list=$db->query('SELECT * FROM ticket ORDER BY ID DESC');
         return $list;
     }
     

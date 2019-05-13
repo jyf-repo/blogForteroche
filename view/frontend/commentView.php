@@ -12,7 +12,7 @@ while($dataComments=$getComments->fetch())
     {
 ?>
 
-<p><strong><?=$dataComments['author'];?></strong><em> Le <?=$dataComments['date_comment'];?></em>: <?=$dataComments['comment'];?></p>
+<p><strong><?=$dataComments['author'];?></strong><em> Le <?=$dataComments['date_comment'];?></em>: <?=$dataComments['comment'];?></p><a href="index.php?action=alertComment&amp;commentId=<?= $dataComments['id'] ?>&amp;postId=<?= $dataComments['id_ticket'];?>">Remonter une alerte sur ce commentaire</a>
 <hr>
 
 <?php

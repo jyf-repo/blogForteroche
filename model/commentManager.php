@@ -55,4 +55,15 @@ class CommentManager extends DbConnect
             'comment'=>$comment
         ));
     }
+    
+    public function commentAlert($commentId)
+    {
+        $db=$this->connect();
+        $req=$db->prepare('UPDATE comments SET alert=:alert WHERE id=:id ');
+        $req->execute(array(
+            'id'=>$commentId,
+            'alert'=>1
+        ));
+        return $req;
+    }
 }

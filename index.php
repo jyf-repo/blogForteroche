@@ -13,6 +13,11 @@ try
         {
             addNewComment($_GET['postId'], $_POST['author'], $_POST['comment']);
         }
+        elseif($_GET['action']=='alertComment')
+        {
+            newAlertComment($_GET['commentId'], $_GET['postId']);
+           
+        }
         else
         {
             listPosts();

@@ -36,3 +36,11 @@ function addNewComment($postId, $author, $comment)
     $insertComment=$commentManager->commentInsert($postId, $author,$comment);
     listComments($postId);
 }
+
+function newAlertComment($commentId, $postId)
+{
+    $commentManager=new \jyfweb\blogForteroche\model\CommentManager();
+    $alertComment=$commentManager->commentAlert($commentId);
+    echo 'Votre alerte a bien été envoyée.';
+    listComments($postId);
+}

@@ -26,7 +26,7 @@ class PostManager extends DbConnect
     public function postGet($postId)
     {
         $db=$this->connect();
-        $request=$db->prepare('SELECT title, content, date_creation FROM ticket WHERE id=?');
+        $request=$db->prepare('SELECT id, title, content, date_creation FROM ticket WHERE id=?');
         $request->execute(array(
             $postId
         ));

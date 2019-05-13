@@ -9,6 +9,10 @@ try
         {
             listComments($_GET['postId']);
         }
+        elseif($_GET['action']=='newComment')
+        {
+            addNewComment($_GET['postId'], $_POST['author'], $_POST['comment']);
+        }
         else
         {
             listPosts();

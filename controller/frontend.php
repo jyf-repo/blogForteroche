@@ -28,3 +28,11 @@ function listComments($postId)
     
     require('view/frontEnd/commentView.php');
 }
+
+function addNewComment($postId, $author, $comment)
+{
+    
+    $commentManager=new \jyfweb\blogForteroche\model\CommentManager();
+    $insertComment=$commentManager->commentInsert($postId, $author,$comment);
+    listComments($postId);
+}

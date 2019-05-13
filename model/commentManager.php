@@ -45,4 +45,14 @@ class CommentManager extends DbConnect
         ));
     }
     
+    public function commentInsert($postId, $author, $comment)
+    {
+        $db=$this->connect();
+        $insert=$db->prepare('INSERT INTO comments (author, id_ticket, comment, date_comment) VALUES (:author, :id_ticket, :comment, NOW())');
+        $insert->execute(array(
+            'author'=>$author,
+            'id_ticket'=>$postId,
+            'comment'=>$comment
+        ));
+    }
 }

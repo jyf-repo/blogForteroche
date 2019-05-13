@@ -39,6 +39,13 @@ function listPosts()
     require('view/backEnd/adminPostView.php');
 }
 
+function onePost($postId)
+{
+    $postManager= new \jyfweb\blogForteroche\model\PostManager();
+    $getPost=$postManager->postGet($postId);
+    listComments($postId);
+}
+
 function addNewPost($title, $content)
 {
     
@@ -49,15 +56,13 @@ function addNewPost($title, $content)
 
 function deleteOldPost($postId)
 {
+    /*suppression du billet*/
     $postManager= new \jyfweb\blogForteroche\model\PostManager();
     $deletePost=$postManager->postDelete($postId);
-    listPosts();
-}
-
-function showPostToModify($postId)
-{
-    $postManager= new \jyfweb\blogForteroche\model\PostManager();
-    $getPost=$postManager->postGet($postId);
+    
+    /*Suppression des commentaires associés*/
+    $commentManager=new \jyfweb\blogForteroche\model\CommentManager();
+    $deleteComments=$commentManager->commentsDelete($postId);
     listPosts();
 }
 
@@ -70,7 +75,26 @@ function updateOldPost($postId,$title,$content)
 
 function listComments($postId)
 {
+    $postManager= new \jyfweb\blogForteroche\model\PostManager();
+    $getPost=$postManager->postGet($postId);
+    
     $commentManager=new \jyfweb\blogForteroche\model\CommentManager();
     $getComments=$commentManager->commentsGet($postId);
+    
     require('view/backend/adminCommentView.php');
+}
+
+function deleteOldComment($commentId, $postId)
+{
+    $commentManager=new \jyfweb\blogForteroche\model\CommentManager();
+    $deleteComment=$commentManager->commentDelete($commentId);
+    listComments($postId);
+    
+}
+
+function activComment($visibility, $commentId, $postId)
+{
+    $commentManager=new \jyfweb\blogForteroche\model\CommentManager();
+    $activateComment=$commentManager->commentActivate($visibility, $commentId);
+    listComments($postId);
 }

@@ -11,7 +11,7 @@ while ($dataPosts=$listPosts->fetch())
 ?>
     
     <h3><?=htmlspecialchars($dataPosts['title'])?></h3><em><?=htmlspecialchars($dataPosts['date_creation'])?></em><p><?=htmlspecialchars($dataPosts['content'])?></p>
-    <a href="admin.php?action=correctionPost&amp;demande=<?=$dataPosts['id']?>">Modifier</a>
+    <a href="admin.php?action=correction&amp;demande=<?=$dataPosts['id']?>">Modifier</a>
     <a href="admin.php?action=delPost&amp;postId=<?=$dataPosts['id']?>">Supprimer</a>
     <a href="admin.php?action=comment&amp;postId=<?=$dataPosts['id']?>">Commentaires</a>
     

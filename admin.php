@@ -21,10 +21,9 @@ try
         {
             deleteOldPost($_GET['postId']);
         }
-        elseif($_GET['action']=='correctionPost')
+        elseif($_GET['action']=='correction')
         {
-            $correctionPost=$_GET['demande'];
-            showPostToModify($correctionPost);
+            listPosts();
         }
         elseif($_GET['action']=='updatePost')
         {
@@ -33,6 +32,14 @@ try
         elseif($_GET['action']=='comment')
         {
             listComments($_GET['postId']);
+        }
+        elseif($_GET['action']=='delComment')
+        {
+            deleteOldComment($_GET['commentId'], $_GET['postId']);
+        }
+       elseif($_GET['action']=='activation')
+        {
+            activComment($_GET['visibility'], $_GET['commentId'], $_GET['postId']);
         }
         else
         {

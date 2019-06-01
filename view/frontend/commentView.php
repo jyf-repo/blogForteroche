@@ -29,12 +29,18 @@ while($dataComments=$getComments->fetch())
 
 <div id="formulaire">
     <h2>Faire un commentaire:</h2>
+    <div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-4">
     <form action="index.php?action=newComment&amp;postId=<?=$getPost['id']; ?>" method="post">
         <input type="hidden" name="id">
         <input type="text" placeholder="Nom" name="author"><br/><br/>
         <textarea rows="2" cols="50" name="comment"placeholder="Commentaire"></textarea><br/><br/>
-        <input type="submit" value="Envoyer"><br/>
+        <input type="submit" class="btn btn-primary" value="Envoyer"><br/>
     </form>
+        </div>
+        </div>
+    </div>
 </div>
 
 <?php $content= ob_get_clean() ?>

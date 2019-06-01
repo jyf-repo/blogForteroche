@@ -41,6 +41,9 @@ function newAlertComment($commentId, $postId)
 {
     $commentManager=new \jyfweb\blogForteroche\model\CommentManager();
     $alertComment=$commentManager->commentAlert($commentId);
-    echo 'Votre alerte a bien été envoyée.';
+    echo '
+    <div class="alert alert-primary" role="alert">
+    Votre alerte a bien été envoyée.
+    </div>';
     listComments($postId);
 }

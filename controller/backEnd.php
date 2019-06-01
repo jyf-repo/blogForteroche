@@ -20,7 +20,9 @@ function connectAdmin($pseudo, $pass)
         } 
         else
         {
-            echo 'Mauvais mot de passe ou mauvais pseudo';
+            echo '<div class="alert alert-danger" role="alert">
+            Mauvais mot de passe ou mauvais pseudo
+            </div>';
             require('view/backend/connexion.php');
         }
 }
@@ -28,7 +30,9 @@ function connectAdmin($pseudo, $pass)
 function deconnectAdmin()
 {
     session_destroy();
-    echo 'Vous etes déconnecté';
+    echo '<div class="alert alert-primary" role="alert">
+    Vous êtes déconnecté
+    </div>';
     require('view/backend/connexion.php');
 }
 

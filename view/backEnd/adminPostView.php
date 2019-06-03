@@ -16,10 +16,23 @@ while ($dataPosts=$listPosts->fetch())
     
         </td>
         <td>
-    <a class="btn btn-primary btn-sm" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+           <a class="btn btn-secondary btn-sm" data-toggle="collapse" href="#modifierImage<?= $dataPosts['id']; ?>" role="button" aria-expanded="false" aria-controls="modifierImage<?= $dataPosts['id']; ?>">
+        Image
+    </a>
+    <div class="collapse" id="modifierImage<?= $dataPosts['id']; ?>">
+      <div class="card card-body">
+        <form method="post" enctype="multipart/form-data" action="admin.php?action=imagePost&amp;postId=<?=$dataPosts['id']?>">
+            <input type="file" name="photo"> <br/><br/>
+            <input type="submit" value="Envoyer">
+        </form>
+      </div>
+    </div>
+        </td>
+        <td>
+    <a class="btn btn-primary btn-sm" data-toggle="collapse" href="#modifierArticle<?= $dataPosts['id']; ?>" role="button" aria-expanded="false" aria-controls="modifierArticle<?= $dataPosts['id']; ?>">
         Modifier
     </a>
-    <div class="collapse" id="collapseExample">
+    <div class="collapse" id="modifierArticle<?= $dataPosts['id']; ?>">
       <div class="card card-body">
         <form method="post" action="admin.php?action=updatePost&amp;postId=<?=$dataPosts['id']?>">
             <input type="text" name="title" value="<?=$dataPosts['title']?>"><br/><br/>

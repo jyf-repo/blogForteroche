@@ -31,6 +31,18 @@ try
             {
                 updateOldPost($_GET['postId'],$_POST['title'], $_POST['content']);
             }
+            elseif($_GET['action']=='imagePost')
+            {
+                if (isset($_FILES['photo']['tmp_name']))
+                {
+                    insertImage($_GET['postId'],$_FILES['photo']['name']);
+                    var_dump($_FILES['photo']['name']);
+                }
+                else
+                {
+                    listPosts();
+                }
+            }
             elseif($_GET['action']=='comment')
             {
                 listComments($_GET['postId']);

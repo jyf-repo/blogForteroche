@@ -58,6 +58,22 @@ function addNewPost($title, $content)
     listPosts();/*header pour eviter de recharger les données* en rechargeant la page*/
 }
 
+function insertImage($postId, $imageName)
+{
+    /*insertion du nom de l'image dans la base*/
+    $postManager= new \jyfweb\blogForteroche\model\PostManager();
+    $newImage=$postManager->imageNew($postId, $imageName);
+    
+    /*insertion de l'image dans le dossier public/image/ de l'application*/
+    $retour = copy($_FILES['photo']['tmp_name'], 'public/image/'.$_FILES['photo']['name']);
+        if($retour) {
+            echo '<div class="alert alert-primary" role="alert">
+            La photo a bien été envoyée.
+            </div>';
+        };
+    listComments($postId);
+}
+
 function deleteOldPost($postId)
 {
     /*suppression du billet*/

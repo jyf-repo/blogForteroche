@@ -26,12 +26,22 @@ class PostManager extends DbConnect
     public function postGet($postId)
     {
         $db=$this->connect();
-        $request=$db->prepare('SELECT id, title, content, date_creation FROM ticket WHERE id=?');
+        $request=$db->prepare('SELECT id, title, content, date_creation, image FROM ticket WHERE id=?');
         $request->execute(array(
             $postId
         ));
         $post=$request->fetch();
         return $post;
+    }
+    
+    public function imageNew($postId, $imageName)
+    {
+        $db=$this->connect();
+        $request=$db->prepare('UPDATE ticket SET image=:image WHERE id=:id');
+        $request->execute(array(
+            'id'=>$postId,
+            'image'=>$imageName
+        ));
     }
     
     public function postDelete($postId)

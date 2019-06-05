@@ -9,6 +9,7 @@ session_start()
     <head>
         <meta charset="utf-8">
         <title><?=$title; ?></title>
+        <script src="https://kit.fontawesome.com/7c3c8c778f.js"></script>
         <link rel="stylesheet" href="public/css/style.css">
         <link rel="stylesheet" href="public/css/css-bootstrap/bootstrap.min.css">
     </head>
@@ -24,10 +25,10 @@ session_start()
                     ?>
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a class="nav-link" href="admin.php?action=">Gestion des billets </a>
+                            <a class="nav-link" href="admin.php?action="><i class='fas fa-home' title="Accueil"></i></a>
                         </li>
                         <li class="nav-item active">
-                             <a class="nav-link" style="margin-right=0px" href='admin.php?action=deconnexion'> Deconnexion</a>
+                             <a class="nav-link" style="margin-right=0px"  href='admin.php?action=deconnexion'><i class="fas fa-sign-out-alt" title='Deconnexion'></i></a>
                         </li>
                     </ul>
                     <?php 

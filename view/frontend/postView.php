@@ -47,19 +47,27 @@
                 <div class="row">
                     <div class="col-md-8 blog-main">
     <h2>Liste des billets déjà publiés:</h2>
-    
+    <table class="table table-hover"> 
+     <tbody>
    
 <?php
 while ($dataPosts=$listPosts->fetch())
 {
 ?>
-    
+    <tr>
+        <td>
     <a href="index.php?action=comment&amp;postId=<?=$dataPosts['id'] ?>"><h3><?=htmlspecialchars($dataPosts['title'])?></h3></a><em><?=htmlspecialchars($dataPosts['date_creation'])?></em><p><?=htmlspecialchars($dataPosts['content'])?></p>
     <hr>
-    
+        </td>
+        <td>
+            <img src="public/image/<?= $dataPosts['image'];?>" width="150px">
+        </td>
+         </tr>
 <?php
 }
 ?>
+        </tbody>
+                        </table>
                     </div>
                 
                 <aside class="col-md-4 blog-sidebar">

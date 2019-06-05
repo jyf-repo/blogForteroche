@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title><?=$title; ?></title>
+        <script src="https://kit.fontawesome.com/7c3c8c778f.js"></script>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link rel="stylesheet" href="public/css/style.css">
         <link rel="stylesheet" href="public/css/css-bootstrap/bootstrap.min.css">
     </head>
@@ -25,9 +27,9 @@
         <hr>
         <div class="nav-scroller py-1 mb-2">
             <nav class="nav d-flex justify-content-between">
-              <a class="p-2 text-muted" href="index.php?action=">Accueil</a>
-              <a class="p-2 text-muted" href="#">Health</a>
-              <a class="p-2 text-muted" href="#">Travel</a>
+              <a class="p-2 text-muted" href="index.php?action="><i class="fas fa-home fa-2x"></i></a>
+              <a class="p-2 text-muted" href="#"><i class="fas fa-couch"></i></a>
+              <a class="p-2 text-muted" href="#">En attente</a>
             </nav>
         </div>
         <hr>

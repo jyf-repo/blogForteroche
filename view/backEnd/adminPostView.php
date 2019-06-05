@@ -13,11 +13,13 @@ while ($dataPosts=$listPosts->fetch())
     <tr>
         <td>
     <h3><?=htmlspecialchars($dataPosts['title'])?></h3><em><?=htmlspecialchars($dataPosts['date_creation'])?></em><p><?=htmlspecialchars($dataPosts['content'])?></p>
-    
+    </td>
+        <td>
+            <img src="public/image/<?= $dataPosts['image'];?>" width="100px">
         </td>
         <td>
-           <a class="btn btn-secondary btn-sm" data-toggle="collapse" href="#modifierImage<?= $dataPosts['id']; ?>" role="button" aria-expanded="false" aria-controls="modifierImage<?= $dataPosts['id']; ?>">
-        Image
+           <a class="btn btn-outline-secondary btn-sm" data-toggle="collapse" href="#modifierImage<?= $dataPosts['id']; ?>" role="button" aria-expanded="false" aria-controls="modifierImage<?= $dataPosts['id']; ?>">
+        <i class="far fa-image "></i>
     </a>
     <div class="collapse" id="modifierImage<?= $dataPosts['id']; ?>">
       <div class="card card-body">
@@ -29,8 +31,8 @@ while ($dataPosts=$listPosts->fetch())
     </div>
         </td>
         <td>
-    <a class="btn btn-primary btn-sm" data-toggle="collapse" href="#modifierArticle<?= $dataPosts['id']; ?>" role="button" aria-expanded="false" aria-controls="modifierArticle<?= $dataPosts['id']; ?>">
-        Modifier
+    <a class="btn btn-outline-primary btn-sm" data-toggle="collapse" href="#modifierArticle<?= $dataPosts['id']; ?>" role="button" aria-expanded="false" aria-controls="modifierArticle<?= $dataPosts['id']; ?>">
+        <i class="fas fa-edit "></i>
     </a>
     <div class="collapse" id="modifierArticle<?= $dataPosts['id']; ?>">
       <div class="card card-body">
@@ -43,8 +45,8 @@ while ($dataPosts=$listPosts->fetch())
     </div>
      </td>
         <td>
-    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
-        Supprimer
+    <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+        <i class="far fa-trash-alt "></i>
     </button>
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -68,7 +70,9 @@ while ($dataPosts=$listPosts->fetch())
     </div>
      </td>
         <td>
-    <a role="button" class="btn btn-secondary btn-sm" href="admin.php?action=comment&amp;postId=<?=$dataPosts['id']?>">Commentaires</a>
+    <a role="button" class="btn btn-outline-secondary btn-sm" href="admin.php?action=comment&amp;postId=<?=$dataPosts['id']?>">
+        <i class="far fa-comments "></i>
+            </a>
         </td>
          </tr>
 <?php       

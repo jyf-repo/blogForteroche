@@ -52,7 +52,7 @@ function onePost($postId)
 
 function addNewPost($title, $content)
 {
-    
+    var_dump($title, $content);
     $postManager= new \jyfweb\blogForteroche\model\PostManager();
     $insertPost=$postManager->postInsert($title,$content);
     listPosts();/*header pour eviter de recharger les données* en rechargeant la page*/

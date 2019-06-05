@@ -17,6 +17,7 @@ try
             }
             elseif($_GET['action']=='newPost')
             {
+                var_dump($_POST['title'],$_POST['content']);
                 addNewPost($_POST['title'],$_POST['content']);
             }
             elseif($_GET['action']=='delPost')

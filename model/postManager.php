@@ -6,6 +6,13 @@ require_once('dbConnect.php');
 
 class PostManager extends DbConnect
 {
+    public function countPosts()
+    {
+        $db=$this->connect();
+        $countPosts=$db->query('SELECT COUNT * FROM ticket');
+        return $countPosts;
+    }
+    
     public function postsList()
     {
         $db=$this->connect();

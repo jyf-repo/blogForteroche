@@ -4,10 +4,17 @@ require_once('model/postManager.php');
 require_once('model/adminManager.php');
 require_once('model/commentManager.php');
 
+function numberOfPosts()
+{
+    $postManager= new \jyfweb\blogForteroche\model\PostManager();
+    $numberOfPosts= $postManager->countPosts();
+}
+
 function listPosts()
 {
     $postManager= new \jyfweb\blogForteroche\model\PostManager();
     $listPosts= $postManager->postsList();
+    numberOfPosts();
     require('view/frontEnd/postView.php');
 }
 

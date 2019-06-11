@@ -7,6 +7,11 @@ body
     margin-left: 200px;
 }
 
+.fond
+{
+    background: url(../image/parDefaut.jpg);
+    width: 100%;
+}
 
 h1
 {
@@ -25,6 +30,7 @@ form
 /*
  * Footer
  */
+
 .blog-footer {
   padding: 2.5rem 0;
   color: #999;
@@ -32,6 +38,7 @@ form
   background-color: #f9f9f9;
   border-top: .05rem solid #e5e5e5;
 }
+
 .blog-footer p:last-child {
   margin-bottom: 0;
 }

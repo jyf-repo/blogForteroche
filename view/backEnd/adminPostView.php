@@ -70,8 +70,8 @@ while ($dataPosts=$listPosts->fetch())
     </div>
      </td>
         <td>
-    <a role="button" class="btn btn-outline-secondary btn-sm" href="admin.php?action=comment&amp;postId=<?=$dataPosts['id']?>">
-        <i class="far fa-comments "></i>
+            <a role="button" class="btn btn-outline-secondary btn-sm" href="admin.php?action=comment&amp;postId=<?=$dataPosts['id']?>">
+                <i class="far fa-comments "></i>
             </a>
         </td>
          </tr>

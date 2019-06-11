@@ -1,9 +1,7 @@
-
 <?php
-session_start()
+    /*session_start();*/
 ?>
-
-
+<!DOCTYPE html>
 <html>
     
     <head>
@@ -14,33 +12,32 @@ session_start()
         <link rel="stylesheet" href="public/css/css-bootstrap/bootstrap.min.css">
     </head>
     
-    <body>
-        
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <span class="navbar-brand mb-0 h1">Billet simple pour l'Alaska </span>
-                    <?php
-                    if (isset($_SESSION['pseudo']))
-                    {                  
-                    ?>
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="admin.php?action="><i class='fas fa-home' title="Accueil"></i></a>
-                        </li>
-                        <li class="nav-item active">
-                             <a class="nav-link" style="margin-right=0px"  href='admin.php?action=deconnexion'><i class="fas fa-sign-out-alt" title='Deconnexion'></i></a>
-                        </li>
-                    </ul>
-                    <?php 
-                    } else {
-                        ?>
-                    <ul class="navbar-nav">
-                    </ul>
-                    <?php
-                    }
-                    ?>
-                </div>
-            </nav>
+    <body>      
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <span class="navbar-brand mb-0 h1">Billet simple pour l'Alaska </span>
+                <?php
+                if (isset($_SESSION['pseudo']))
+                {                  
+                ?>
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="admin.php?action="><i class='fas fa-home' title="Accueil"></i></a>
+                    </li>
+                    <li class="nav-item active">
+                         <a class="nav-link" style="margin-right=0px"  href='admin.php?action=deconnexion'><i class="fas fa-sign-out-alt" title='Deconnexion'></i></a>
+                    </li>
+                </ul>
+                <?php 
+                } else {
+                ?>
+                <ul class="navbar-nav">
+                </ul>
+                <?php
+                }
+                ?>
+            </div>
+        </nav>
         <div class="jumbotron">
         <?= $content; ?>
         </div>

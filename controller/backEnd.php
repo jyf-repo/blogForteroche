@@ -6,7 +6,7 @@ require_once('model/commentManager.php');
 
 function showFormConnect()
 {
-    require('view/backend/connexion.php');
+    require('view/backEnd/connexion.php');
 }
 
 function connectAdmin($pseudo, $pass)
@@ -23,7 +23,7 @@ function connectAdmin($pseudo, $pass)
             echo '<div class="alert alert-danger" role="alert">
             Mauvais mot de passe ou mauvais pseudo
             </div>';
-            require('view/backend/connexion.php');
+            require('view/backEnd/connexion.php');
         }
 }
 
@@ -33,7 +33,7 @@ function deconnectAdmin()
     echo '<div class="alert alert-primary" role="alert">
     Vous êtes déconnecté
     </div>';
-    require('view/backend/connexion.php');
+    require('view/backEnd/connexion.php');
 }
 
 function listPosts()
@@ -101,7 +101,7 @@ function listComments($postId)
     $commentManager=new \jyfweb\blogForteroche\model\CommentManager();
     $getComments=$commentManager->commentsGet($postId);
     
-    require('view/backend/adminCommentView.php');
+    require('view/backEnd/adminCommentView.php');
 }
 
 function deleteOldComment($commentId, $postId)

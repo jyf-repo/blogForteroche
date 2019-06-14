@@ -26,6 +26,7 @@ function listPosts()
     $getPost=$postManager->postGet($lastPost);
     $seePost=$postManager->postSee();
     $listPosts= $postManager->postsList();
+    $listDatePosts=$postManager->postsList();
     
     $commentManager= new \jyfweb\blogForteroche\model\CommentManager();
     $seeComment=$commentManager->commentSee();

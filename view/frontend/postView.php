@@ -13,7 +13,7 @@
           <p class="lead my-3"> <em>Le <?= $getPost['date_creation'];?></em>
             <?=substr(htmlspecialchars($getPost['content']),0,100)?> ... </p>
         
-          <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Allons le lire...</a></p>
+          <p class="lead mb-0"><a href="index.php?action=comment&amp;postId=<?=$getPost['id'] ?>" class="text-white font-weight-bold">Allons le lire...</a></p>
         </div>
     </div>
     </div>
@@ -28,7 +28,7 @@
           <h3 class="mb-0"><?=htmlspecialchars($seeComment['author'])?></h3>
           <div class="mb-1 text-muted"><?=htmlspecialchars($seeComment['date_comment'])?></div>
           <p class="card-text mb-auto"><?=substr(htmlspecialchars($seeComment['comment']),0,50)?> ... </p>
-          <a href="#" class="stretched-link">Je vais lire</a>
+          <a href="index.php?action=comment&amp;postId=<?=$seeComment['id_ticket'] ?>" class="stretched-link">Je vais lire</a>
         </div>
           
         <div class="col-auto d-none d-lg-block">
@@ -41,10 +41,10 @@
       <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
           <strong class="d-inline-block mb-2 text-success">Presse</strong>
-          <a href="index.php?action=comment&amp;postId=<?=$seePost['id'] ?>"><h3><?=htmlspecialchars($seePost['title'])?></h3></a>
+          <h3><?=htmlspecialchars($seePost['title'])?></h3></a>
           <div class="mb-1 text-muted"><?=htmlspecialchars($seePost['date_creation'])?></div>
           <p class="mb-auto"><?=substr(htmlspecialchars($seePost['content']),0,50)?> ... </p>
-          <a href="#" class="stretched-link">Je vais lire</a>
+          <a href="index.php?action=comment&amp;postId=<?=$seePost['id'] ?>" class="stretched-link">Je vais lire</a>
         </div>
         <div class="col-auto d-none d-lg-block">
           <img src="public/image/<?= $seePost['image'];?>" width="250" background="#55595c" color="#eceeef" text="Thumbnail" alt="autre image">
@@ -61,27 +61,26 @@
                     <div class="col-md-8 blog-main">
     <h2>Articles publiés:</h2>
     <table class="table table-hover"> 
-     <tbody>
+    <tbody>
    
 <?php
-       echo $totalPosts;
+      
 while ($dataPosts=$listPosts->fetch())
 {
 ?>
     <tr>
         <td>
-    <a href="index.php?action=comment&amp;postId=<?=$dataPosts['id'] ?>"><h3><?=htmlspecialchars($dataPosts['title'])?></h3></a><em><?=htmlspecialchars($dataPosts['date_creation'])?></em><p><?=htmlspecialchars($dataPosts['content'])?></p>
-   
+            <a href="index.php?action=comment&amp;postId=<?=$dataPosts['id'] ?>"><h3><?=htmlspecialchars($dataPosts['title'])?></h3></a><em><?=htmlspecialchars($dataPosts['date_creation'])?></em><p><?=htmlspecialchars($dataPosts['content'])?></p>
         </td>
         <td>
             <img src="public/image/<?= $dataPosts['image'];?>" width="150px">
         </td>
-         </tr>
+        </tr>
 <?php
 }
 ?>
         </tbody>
-                        </table>
+        </table>
                     </div>
                 
                 <aside class="col-md-4 blog-sidebar">
@@ -93,18 +92,16 @@ while ($dataPosts=$listPosts->fetch())
                   <div class="p-4">
                     <h4 class="font-italic">Archives</h4>
                     <ol class="list-unstyled mb-0">
-                      <li><a href="#">March 2014</a></li>
-                      <li><a href="#">February 2014</a></li>
-                      <li><a href="#">January 2014</a></li>
-                      <li><a href="#">December 2013</a></li>
-                      <li><a href="#">November 2013</a></li>
-                      <li><a href="#">October 2013</a></li>
-                      <li><a href="#">September 2013</a></li>
-                      <li><a href="#">August 2013</a></li>
-                      <li><a href="#">July 2013</a></li>
-                      <li><a href="#">June 2013</a></li>
-                      <li><a href="#">May 2013</a></li>
-                      <li><a href="#">April 2013</a></li>
+<?php
+                        
+while($againPosts=$listDatePosts->fetch())
+{
+?>
+                        <li><a href="index.php?action=comment&amp;postId=<?=$againPosts['id']; ?>"><?=htmlspecialchars($againPosts['date_creation']);?></a></li>
+<?php
+}
+?>
+                      
                     </ol>
                   </div>
 

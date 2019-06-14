@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 require_once('model/postManager.php');
 require_once('model/adminManager.php');
 require_once('model/commentManager.php');
@@ -48,6 +49,13 @@ function onePost($postId)
     $postManager= new \jyfweb\blogForteroche\model\PostManager();
     $getPost=$postManager->postGet($postId);
     listComments($postId);
+}
+
+function activPost($postId,$visibility)
+{
+    $postManager= new \jyfweb\blogForteroche\model\PostManager();
+    $activPost=$postManager->postShow($postId,$visibility);
+    listPosts();
 }
 
 function addNewPost($title, $content)
@@ -110,6 +118,13 @@ function deleteOldComment($commentId, $postId)
     $deleteComment=$commentManager->commentDelete($commentId);
     listComments($postId);
     
+}
+
+function firstComment($commentId, $postId)
+{
+    $commentManager=new \jyfweb\blogForteroche\model\CommentManager();
+    $firstComment=$commentManager->commentShow($commentId);
+    listComments($postId);
 }
 
 function activComment($visibility, $commentId, $postId)

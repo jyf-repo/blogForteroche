@@ -76,6 +76,23 @@ else
 }
  ?>
             </td>
+            <td>
+                <?php
+                if($dataComments['first_page']==1)
+                {
+                 ?>
+                <p>Ce commentaire est mis en avant en premiere page.</p>
+                <?php
+                }
+                else
+                {
+                ?>
+                    <a role="button" class="btn btn-danger btn-sm" href="admin.php?action=onFirstPage&amp;commentId=<?=$dataComments['id'];?>&amp;postId=<?=$dataComments['id_ticket'];?>">Accueil</a>
+                <?php 
+                }
+                ?>
+            
+            </td>
         </tr>
             <?php
 }

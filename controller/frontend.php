@@ -8,21 +8,29 @@ function numberOfPosts()
 {
     $postManager= new \jyfweb\blogForteroche\model\PostManager();
     $numberOfPosts= $postManager->countPosts();
-}
-
-function listPosts()
-{
-    $postManager= new \jyfweb\blogForteroche\model\PostManager();
-    $listPosts= $postManager->postsList();
-    numberOfPosts();
-    require('view/frontEnd/postView.php');
+    return $numberOfPosts;
 }
 
 function onePost($postId)
 {
     $postManager= new \jyfweb\blogForteroche\model\PostManager();
     $getPost=$postManager->postGet($postId);
-    listComments($postId);
+    var_dump($getPost);
+}
+
+function listPosts()
+{
+    
+    $postManager= new \jyfweb\blogForteroche\model\PostManager();
+    $lastPost=$postManager->postlast();
+    $getPost=$postManager->postGet($lastPost);
+    $seePost=$postManager->postSee();
+    $listPosts= $postManager->postsList();
+    
+    $commentManager= new \jyfweb\blogForteroche\model\CommentManager();
+    $seeComment=$commentManager->commentSee();
+    
+    require('view/frontEnd/postView.php');
 }
 
 function listComments($postId)

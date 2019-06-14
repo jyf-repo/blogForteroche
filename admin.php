@@ -44,6 +44,10 @@ try
                     listPosts();
                 }
             }
+            elseif($_GET['action']=='showPost')
+            {
+                activPost($_GET['postId'],$_GET['visibility']);
+            }
             elseif($_GET['action']=='comment')
             {
                 listComments($_GET['postId']);
@@ -55,6 +59,10 @@ try
            elseif($_GET['action']=='activation')
             {
                 activComment($_GET['visibility'], $_GET['commentId'], $_GET['postId']);
+            }
+            elseif($_GET['action']=='onFirstPage')
+            {
+                firstComment($_GET['commentId'], $_GET['postId']);
             }
             else
             {

@@ -20,13 +20,17 @@ try
         }
         else
         {
+           
             listPosts();
+           
         }
         
     }
     else
     {
-       listPosts();
+       
+        listPosts();
+        
     }
 }
 catch (Exception $e)

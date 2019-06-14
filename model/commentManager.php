@@ -9,7 +9,7 @@ class CommentManager extends DbConnect
     public function commentsGet($postId)
     {
         $db=$this->connect();
-        $request=$db->prepare('SELECT id, author, id_ticket, comment, date_comment, alert, visibility FROM comments WHERE id_ticket=?');
+        $request=$db->prepare('SELECT * FROM comments WHERE id_ticket=?');
         $request->execute(array(
             $postId
         ));
@@ -34,6 +34,25 @@ class CommentManager extends DbConnect
         ));
     }
     
+    public function commentShow($commentId)
+    {
+        $db=$this->connect();
+        $resetVisibility=$db->query('UPDATE comments SET first_page=0');/*reset visibility to 0*/
+        $reset=$resetVisibility->fetch();
+        $req=$db->prepare('UPDATE comments SET first_page=1 WHERE id=:id ');/*then only one post visible*/
+        $req->execute(array(
+            'id'=>$commentId,
+        ));
+        return $req;
+    }
+    
+    public function commentSee()
+    {
+        $db=$this->connect();
+        $request=$db->query('SELECT * FROM comments WHERE first_page=1');
+        $comment=$request->fetch();
+        return $comment;
+    }
     
     public function commentActivate($visibility,$commentId)
     {

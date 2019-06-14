@@ -18,6 +18,10 @@ try
             newAlertComment($_GET['commentId'], $_GET['postId']);
            
         }
+        elseif($_GET['action']=='totalPosts')
+        {
+            totalPosts();
+        }
         else
         {
            

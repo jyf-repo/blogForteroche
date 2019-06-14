@@ -34,6 +34,13 @@ function listPosts()
     require('view/frontEnd/postView.php');
 }
 
+function totalPosts()
+{
+    $postManager= new \jyfweb\blogForteroche\model\PostManager();
+    $listPosts= $postManager->postsList();
+    require('view/frontEnd/totalPostView.php');
+}
+
 function listComments($postId)
 {
     $postManager= new \jyfweb\blogForteroche\model\PostManager();

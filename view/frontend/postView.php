@@ -9,7 +9,7 @@
     <div class="jumbotron p-4 p-md-5 text-white rounded bg-transparent">
         
         <div class="col-md-6 px-0">
-          <h1 class="display-4 font-italic">Et voici le nouveau chapitre tant attendu: <?= $getPost['title'];?></h1>
+          <h1 class="display-4 font-italic">Voici le nouveau chapitre tant attendu: <?= $getPost['title'];?></h1>
           <p class="lead my-3"> <em>Le <?= $getPost['date_creation'];?></em>
             <?=substr(htmlspecialchars($getPost['content']),0,100)?> ... </p>
         

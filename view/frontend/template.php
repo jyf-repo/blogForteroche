@@ -27,8 +27,8 @@
         <div class="nav-scroller py-1 mb-2">
             <nav class="nav d-flex justify-content-between">
               <a class="p-2 text-muted" href="index.php"><i class="fas fa-home" style="color: darkseagreen"> Accueil</i></a>
-              <a class="p-2 text-muted" href="index.php?action=totalPosts"><i class="far fa-newspaper" style="color: darkseagreen"> Articles</i></a>
-              <a class="p-2 text-muted" href="#"><i class="fas fa-sign-in-alt" style="color: darkseagreen"> Connexion</i></a>
+              <a class="p-2 text-muted" href="index.php?action=totalPosts"><i class="fas fa-newspaper" style="color: darkseagreen"> Articles</i></a>
+                <a class="p-2 text-muted" href="#"><i class="fas fa-user-plus" style="color: darkseagreen"> S'incrire</i></a>
             </nav>
         </div>
         <hr>

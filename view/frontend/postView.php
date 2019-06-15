@@ -59,18 +59,19 @@
     <main role="main" class="container">
                 <div class="row">
                     <div class="col-md-8 blog-main">
-    <h2>Articles publiés:</h2>
+    <h2>Derniers articles publiés:</h2>
     <table class="table table-hover"> 
     <tbody>
    
 <?php
-      
+$limit=5;/*limitation à 5 articles*/
 while ($dataPosts=$listPosts->fetch())
 {
 ?>
     <tr>
         <td>
-            <a href="index.php?action=comment&amp;postId=<?=$dataPosts['id'] ?>"><h3><?=htmlspecialchars($dataPosts['title'])?></h3></a><em><?=htmlspecialchars($dataPosts['date_creation'])?></em><p><?=htmlspecialchars($dataPosts['content'])?></p>
+            <a href="index.php?action=comment&amp;postId=<?=$dataPosts['id'] ?>"><h3><?=htmlspecialchars($dataPosts['title'])?></h3></a><em><?=htmlspecialchars($dataPosts['date_creation'])?></em><p><?=substr(htmlspecialchars($dataPosts['content']),0,50)?> ... </p>
+            <p>Lire la suite</p>
         </td>
         <td>
             <img src="public/image/<?= $dataPosts['image'];?>" width="150px">
@@ -85,12 +86,17 @@ while ($dataPosts=$listPosts->fetch())
                 
                 <aside class="col-md-4 blog-sidebar">
                   <div class="p-4 mb-3 bg-light rounded">
-                    <h4 class="font-italic">A propos</h4>
-                    <p class="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                    <h4 class="font-italic">S'inscrire</h4>
+                      <form>
+                          <input type="text" name="pseudo" placeholder='pseudo'><br/>
+                          <input type="text" name="email" placeholder='email'><br/>
+                          <input type="submit" value="Envoyer">
+                      </form>
+                    <p class="mb-0">Profitez des nouvelles parutions en avant premiere et des rendez-vous litteraires avec l'auteur.</p>
                   </div>
 
                   <div class="p-4">
-                    <h4 class="font-italic">Archives</h4>
+                    <h4 class="font-italic">Historique</h4>
                     <ol class="list-unstyled mb-0">
 <?php
                         

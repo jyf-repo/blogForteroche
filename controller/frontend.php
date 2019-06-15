@@ -34,6 +34,17 @@ function listPosts()
     require('view/frontEnd/postView.php');
 }
 
+function inscription($name, $email)
+{
+    $postManager= new \jyfweb\blogForteroche\model\PostManager();
+    $inscription=$postManager->inscriptReader($name, $email);
+    echo '
+    <div class="alert alert-primary" role="alert">
+    Votre inscription a bien été prise en compte.
+    </div>';
+    listPosts();
+}
+
 function totalPosts()
 {
     $postManager= new \jyfweb\blogForteroche\model\PostManager();

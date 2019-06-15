@@ -22,6 +22,11 @@ try
         {
             totalPosts();
         }
+        elseif($_GET['action']=='inscription')
+        {
+            inscription($_POST['name'], $_POST['email']);
+        }
+        
         else
         {
            

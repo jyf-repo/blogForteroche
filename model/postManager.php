@@ -50,6 +50,16 @@ class PostManager extends DbConnect
         return $list;
     }
     
+    public function inscriptReader($name,$email)
+    {
+        $db=$this->connect();
+        $read=$db->prepare('INSERT INTO readers (name, email, date_inscription) VALUES (:name, :email, NOW())');
+        $read->execute(array(
+            'name'=>$name,
+            'email'=>$email
+        ));
+    }
+    
     public function postInsert($title, $content)
     {
         $db=$this->connect();

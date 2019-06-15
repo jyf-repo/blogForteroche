@@ -1,8 +1,9 @@
 <?php $title='Billet simple pour l\'Alaska - Jean Forteroche' ?>
 <?php ob_start(); ?>
 
+<img src="public/image/<?=$getPost['image']; ?>" class="rounded float-right" width="400" alt="<?= $getPost['title'];?>">
 <h3><?= $getPost['title'];?> </h3><em>Le <?= $getPost['date_creation'];?></em> <p><?= $getPost['content'];?></p>
-<img src="public/image/<?=$getPost['image']; ?>" class="img-fluid" alt="<?= $getPost['title'];?>">
+
 <hr>
 
 <?php

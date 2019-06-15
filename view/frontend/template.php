@@ -28,7 +28,7 @@
             <nav class="nav d-flex justify-content-between">
               <a class="p-2 text-muted" href="index.php"><i class="fas fa-home" style="color: darkseagreen"> Accueil</i></a>
               <a class="p-2 text-muted" href="index.php?action=totalPosts"><i class="fas fa-newspaper" style="color: darkseagreen"> Articles</i></a>
-                <a class="p-2 text-muted" href="#inscrire"><i class="fas fa-user-plus" style="color: darkseagreen"> S'incrire</i></a>
+                <a class="p-2 text-muted" href="index.php?#inscrire"><i class="fas fa-user-plus" style="color: darkseagreen"> S'incrire</i></a>
             </nav>
         </div>
         <hr>

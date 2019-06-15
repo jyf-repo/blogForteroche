@@ -43,10 +43,10 @@ class PostManager extends DbConnect
         return $post;
     }
     
-    public function postsList()
+    public function postsList($limit)
     {
         $db=$this->connect();
-        $list=$db->query('SELECT * FROM ticket ORDER BY ID DESC ');
+        $list=$db->query('SELECT * FROM ticket ORDER BY ID DESC LIMIT 0,'.$limit );
         return $list;
     }
     

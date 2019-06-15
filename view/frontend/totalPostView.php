@@ -15,7 +15,7 @@ while ($dataPosts=$listPosts->fetch())
             <a href="index.php?action=comment&amp;postId=<?=$dataPosts['id'] ?>"><h3><?=htmlspecialchars($dataPosts['title'])?></h3></a><em><?=htmlspecialchars($dataPosts['date_creation'])?></em><p><?=htmlspecialchars($dataPosts['content'])?></p>
         </td>
         <td>
-            <img src="public/image/<?= $dataPosts['image'];?>" width="150px">
+            <img src="public/image/<?= $dataPosts['image'];?>" class="rounded float-right" width="200px">
         </td>
     </tr>
 <?php

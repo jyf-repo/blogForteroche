@@ -20,25 +20,36 @@ try
         }
         elseif($_GET['action']=='totalPosts')
         {
-            totalPosts();
+            
+            numberOfPosts();
+            $limitMax=numberOfPosts();
+            totalPosts($limitMax);
         }
         elseif($_GET['action']=='inscription')
         {
-            inscription($_POST['name'], $_POST['email']);
+            numberOfPosts();
+            $limitMax=numberOfPosts();
+            var_dump($limitMax);
+            $limit=4;
+            inscription($_POST['name'], $_POST['email'], $limit, $limitMax);
         }
         
         else
         {
-           
-            listPosts();
+            numberOfPosts();
+            $limitMax=numberOfPosts();
+            $limit=4;
+            listPosts($limit, $limitMax);
            
         }
         
     }
     else
     {
-       
-        listPosts();
+        numberOfPosts();
+        $limitMax=numberOfPosts();
+        $limit=4;
+        listPosts($limit, $limitMax);
         
     }
 }

@@ -1,13 +1,15 @@
 <?php 
 
 require_once('controller/backEnd.php');
+numberOfPosts();
+$limitMax=numberOfPosts();
 try
 {
     if (isset($_GET['action']))
     {
         if($_GET['action']=='connexion')
         {
-            connectAdmin($_POST['pseudo'],$_POST['pass']);
+            connectAdmin($_POST['pseudo'],$_POST['pass'],$limitMax);
         } 
         else if (isset($_SESSION['pseudo']))
         {
@@ -18,19 +20,20 @@ try
             elseif($_GET['action']=='newPost')
             {
                 var_dump($_POST['title'],$_POST['content']);
-                addNewPost($_POST['title'],$_POST['content']);
+                addNewPost($_POST['title'],$_POST['content'],$limitMax);
             }
             elseif($_GET['action']=='delPost')
             {
-                deleteOldPost($_GET['postId']);
+                deleteOldPost($_GET['postId'],$limitMax);
             }
             elseif($_GET['action']=='correction')
             {
-                listPosts();
+                
+                listPosts($limitMax);
             }
             elseif($_GET['action']=='updatePost')
             {
-                updateOldPost($_GET['postId'],$_POST['title'], $_POST['content']);
+                updateOldPost($_GET['postId'],$_POST['title'], $_POST['content'],$limitMax);
             }
             elseif($_GET['action']=='imagePost')
             {
@@ -41,12 +44,13 @@ try
                 }
                 else
                 {
-                    listPosts();
+                   
+                    listPosts($limitMax);
                 }
             }
             elseif($_GET['action']=='showPost')
             {
-                activPost($_GET['postId'],$_GET['visibility']);
+                activPost($_GET['postId'],$_GET['visibility'],$limitMax);
             }
             elseif($_GET['action']=='comment')
             {
@@ -66,7 +70,8 @@ try
             }
             else
             {
-                listPosts();
+                
+                listPosts($limitMax);
             }
         }
         else
@@ -76,7 +81,7 @@ try
     }
     else
     {
-       showFormConnect();
+        showFormConnect();
     }
 }
 catch (Exception $e)

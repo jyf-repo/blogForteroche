@@ -18,15 +18,15 @@ function onePost($postId)
     var_dump($getPost);
 }
 
-function listPosts()
+function listPosts($limit,$limitMax)
 {
     
     $postManager= new \jyfweb\blogForteroche\model\PostManager();
     $lastPost=$postManager->postlast();
     $getPost=$postManager->postGet($lastPost);
     $seePost=$postManager->postSee();
-    $listPosts= $postManager->postsList();
-    $listDatePosts=$postManager->postsList();
+    $listPosts= $postManager->postsList($limit);
+    $listDatePosts=$postManager->postsList($limitMax);
     
     $commentManager= new \jyfweb\blogForteroche\model\CommentManager();
     $seeComment=$commentManager->commentSee();
@@ -34,7 +34,7 @@ function listPosts()
     require('view/frontEnd/postView.php');
 }
 
-function inscription($name, $email)
+function inscription($name, $email, $limit,$limitMax)
 {
     $postManager= new \jyfweb\blogForteroche\model\PostManager();
     $inscription=$postManager->inscriptReader($name, $email);
@@ -42,13 +42,13 @@ function inscription($name, $email)
     <div class="alert alert-primary" role="alert">
     Votre inscription a bien été prise en compte.
     </div>';
-    listPosts();
+    listPosts($limit,$limitMax);
 }
 
-function totalPosts()
+function totalPosts($limitMax)
 {
     $postManager= new \jyfweb\blogForteroche\model\PostManager();
-    $listPosts= $postManager->postsList();
+    $listPosts= $postManager->postsList($limitMax);
     require('view/frontEnd/totalPostView.php');
 }
 

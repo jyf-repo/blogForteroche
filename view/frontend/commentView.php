@@ -2,7 +2,7 @@
 <?php ob_start(); ?>
 
 <h3><?= $getPost['title'];?> </h3><em>Le <?= $getPost['date_creation'];?></em> <p><?= $getPost['content'];?></p>
-<img src="public/image/<?=$getPost['image']; ?>" width="600">
+<img src="public/image/<?=$getPost['image']; ?>" class="img-fluid" alt="<?= $getPost['title'];?>">
 <hr>
 
 <?php

@@ -32,7 +32,7 @@
         </div>
           
         <div class="col-auto d-none d-lg-block">
-          <img src="public/image/commentaires.jpg" width="250"  background="#55595c" color="#eceeef" text="Thumbnail" alt="image">
+          <img src="public/image/commentaires.jpg" class="rounded float-right" width="250"  background="#55595c" color="#eceeef" text="Thumbnail" alt="image">
         </div>
       </div>
     </div>
@@ -41,13 +41,13 @@
       <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
           <strong class="d-inline-block mb-2 text-success">La presse en parle</strong>
-          <h3><?=htmlspecialchars($seePost['title'])?></h3></a>
+            <h3 class="mb-0"><?=htmlspecialchars($seePost['title'])?></h3>
           <div class="mb-1 text-muted"><?=htmlspecialchars($seePost['date_creation'])?></div>
-          <p class="mb-auto"><?=substr(htmlspecialchars($seePost['content']),0,50)?> ... </p>
-          <a href="index.php?action=comment&amp;postId=<?=$seePost['id'] ?>" class="stretched-link">Relire ce passage</a>
+          <p class="card-text mb-auto"><?=substr(htmlspecialchars($seePost['content']),0,20)?> ... </p>
+          <a href="index.php?action=comment&amp;postId=<?=$seePost['id'] ?>" class="stretched-link">Relire ce chapitre</a>
         </div>
         <div class="col-auto d-none d-lg-block">
-          <img src="public/image/<?= $seePost['image'];?>" width="250" background="#55595c" color="#eceeef" text="Thumbnail" alt="autre image">
+          <img src="public/image/<?= $seePost['image'];?>" class="rounded float-right" width="250" background="#55595c" color="#eceeef" text="Thumbnail" alt="autre image">
         </div>
       </div>
     </div>
@@ -64,7 +64,7 @@
     <tbody>
    
 <?php
-$limit=4;/*limitation à 4 presentation d'article en page d'accueil*/
+
 while ($dataPosts=$listPosts->fetch())
 {
 ?>
@@ -74,7 +74,7 @@ while ($dataPosts=$listPosts->fetch())
             <p>Lire la suite</p>
         </td>
         <td>
-            <img src="public/image/<?= $dataPosts['image'];?>" width="150px">
+            <img src="public/image/<?= $dataPosts['image'];?>" class="rounded float-right" width="150px">
         </td>
         </tr>
 <?php

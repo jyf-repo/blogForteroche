@@ -10,14 +10,21 @@ function showFormConnect()
     require('view/backEnd/connexion.php');
 }
 
-function connectAdmin($pseudo, $pass)
+function numberOfPosts()
+{
+    $postManager= new \jyfweb\blogForteroche\model\PostManager();
+    $numberOfPosts= $postManager->countPosts();
+    return $numberOfPosts;
+}
+
+function connectAdmin($pseudo, $pass,$limitMax)
 {
     $adminManager= new \jyfweb\blogForteroche\model\AdminManager();
     $passVerif=$adminManager->verifPass($pseudo,$pass);
     if ($passVerif==true)
         {      
             $_SESSION['pseudo']=$_POST['pseudo'];
-            listPosts();
+            listPosts($limitMax);
         } 
         else
         {
@@ -37,10 +44,11 @@ function deconnectAdmin()
     require('view/backEnd/connexion.php');
 }
 
-function listPosts()
+
+function listPosts($limitMax)
 {
     $postManager= new \jyfweb\blogForteroche\model\PostManager();
-    $listPosts= $postManager->postsList();
+    $listPosts= $postManager->postsList($limitMax);
     require('view/backEnd/adminPostView.php');
 }
 
@@ -51,19 +59,19 @@ function onePost($postId)
     listComments($postId);
 }
 
-function activPost($postId,$visibility)
+function activPost($postId,$visibility,$limitMax)
 {
     $postManager= new \jyfweb\blogForteroche\model\PostManager();
     $activPost=$postManager->postShow($postId,$visibility);
-    listPosts();
+    listPosts($limitMax);
 }
 
-function addNewPost($title, $content)
+function addNewPost($title, $content,$limitMax)
 {
-    var_dump($title, $content);
+   
     $postManager= new \jyfweb\blogForteroche\model\PostManager();
     $insertPost=$postManager->postInsert($title,$content);
-    listPosts();/*header pour eviter de recharger les données* en rechargeant la page*/
+    listPosts($limitMax);/*header pour eviter de recharger les données* en rechargeant la page*/
 }
 
 function insertImage($postId, $imageName)
@@ -82,7 +90,7 @@ function insertImage($postId, $imageName)
     listComments($postId);
 }
 
-function deleteOldPost($postId)
+function deleteOldPost($postId,$limitMax)
 {
     /*suppression du billet*/
     $postManager= new \jyfweb\blogForteroche\model\PostManager();
@@ -91,14 +99,14 @@ function deleteOldPost($postId)
     /*Suppression des commentaires associés*/
     $commentManager=new \jyfweb\blogForteroche\model\CommentManager();
     $deleteComments=$commentManager->commentsDelete($postId);
-    listPosts();
+    listPosts($limitMax);
 }
 
-function updateOldPost($postId,$title,$content)
+function updateOldPost($postId,$title,$content,$limitMax)
 {
     $postManager=new \jyfweb\blogForteroche\model\PostManager();
     $modifyPost=$postManager->postModify($postId,$title,$content);
-    listPosts();/*header pour eviter de recharger les données* en rechargeant la page*/
+    listPosts($limitMax);/*header pour eviter de recharger les données* en rechargeant la page*/
 }
 
 function listComments($postId)

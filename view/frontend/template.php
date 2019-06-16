@@ -3,12 +3,13 @@
     <head>
         <meta charset="utf-8">
         <title><?=$title; ?></title>
+        <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/7c3c8c778f.js"></script>
         <link rel="stylesheet" href="public/css/style.css">
         <link rel="stylesheet" href="public/css/css-bootstrap/bootstrap.min.css">
     </head>
     
-    <div class="container">
+    <div class="container-fluid">
         <header class="blog-header py-3">
             <div class="row flex-nowrap justify-content-between align-items-center">
                 <div class="col-2 pt-1">

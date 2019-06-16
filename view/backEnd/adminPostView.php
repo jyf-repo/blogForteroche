@@ -80,14 +80,14 @@ while ($dataPosts=$listPosts->fetch())
             if($dataPosts['visibility']==0)
             {
                 ?>
-            <a role="button" class="btn btn-outline-secondary btn-sm" href="admin.php?action=showPost&amp;postId=<?=$dataPosts['id']?>&amp;visibility=1">Activer
+            <a role="button" class="btn btn-outline-danger btn-sm" href="admin.php?action=showPost&amp;postId=<?=$dataPosts['id']?>&amp;visibility=1"><i class="fas fa-times"> Activer</i>
             </a>
             <?php
             }
              else
              {
             ?>
-            <a role="button" class="btn btn-outline-secondary btn-sm" href="admin.php?action=showPost&amp;postId=<?=$dataPosts['id']?>&amp;visibility=0">Désactiver
+            <a role="button" class="btn btn-outline-success btn-sm" href="admin.php?action=showPost&amp;postId=<?=$dataPosts['id']?>&amp;visibility=0"><i class="fas fa-check"></i>
             </a>
             <?php
             }
@@ -109,10 +109,10 @@ while ($dataPosts=$listPosts->fetch())
             <form action="admin.php?action=newPost" method="post">
                 <input type="hidden" name="id">
                 <div class="form-group">
-                <input type="text" placeholder="Titre" name="title">
+                <input type="text" cols="100%" placeholder="Titre" name="title">
                 </div>
                 <div class="form-group">
-                <textarea rows="5" cols="50" name="content"placeholder="Zone de texte à remplir"></textarea>
+                <textarea rows="10" cols="100%" name="content"placeholder="Zone de texte à remplir"></textarea>
                 </div>
                 <input type="submit" class="btn btn-primary" value="Envoyer"><br/>
             </form>

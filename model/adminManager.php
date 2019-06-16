@@ -17,4 +17,11 @@ class AdminManager extends DbConnect
         $verif=$requete->fetch();
         return $verif;
     }
+    
+    public function listContacts()
+    {
+        $db=$this->connect();
+        $requete=$db->query('SELECT * FROM readers');
+        return $requete;
+    }
 }

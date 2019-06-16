@@ -7,6 +7,7 @@
     <head>
         <meta charset="utf-8">
         <title><?=$title; ?></title>
+        <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/7c3c8c778f.js"></script>
         <link rel="stylesheet" href="public/css/style.css">
         <link rel="stylesheet" href="public/css/css-bootstrap/bootstrap.min.css">
@@ -22,10 +23,13 @@
                 ?>
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="admin.php?action="><i class='fas fa-home' title="Accueil"></i></a>
+                        <a class="nav-link" href="admin.php?action="><i class='fas fa-home' title="Accueil"> Accueil</i></a>
                     </li>
                     <li class="nav-item active">
-                         <a class="nav-link" style="margin-right=0px"  href='admin.php?action=deconnexion'><i class="fas fa-sign-out-alt" title='Deconnexion'></i></a>
+                        <a class="nav-link" href="admin.php?action=contacts"><i class="fas fa-address-card" title='Inscrits'> Inscrits</i></a>
+                    </li>
+                    <li class="nav-item active">
+                         <a class="nav-link" style="margin-right=0px"  href='admin.php?action=deconnexion'><i class="fas fa-sign-out-alt" title='Deconnexion'> Déconnexion</i></a>
                     </li>
                 </ul>
                 <?php 

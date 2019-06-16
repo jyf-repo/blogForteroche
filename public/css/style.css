@@ -1,14 +1,14 @@
-body
+html
 {
    
-    font-family: Verdana;
+    font-family: 'Oswald', sans-serif;
    
 }
+
 
 .fond
 {
     background: url(../image/parDefaut.jpg);
-    width: 100%;
 }
 
 h1

@@ -17,6 +17,10 @@ try
             {
                 deconnectAdmin();
             }
+            elseif($_GET['action']=='contacts')
+            {
+                showContacts();
+            }
             elseif($_GET['action']=='newPost')
             {
                 var_dump($_POST['title'],$_POST['content']);

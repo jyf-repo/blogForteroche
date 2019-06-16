@@ -44,6 +44,12 @@ function deconnectAdmin()
     require('view/backEnd/connexion.php');
 }
 
+function showContacts()
+{
+    $adminManager= new \jyfweb\blogForteroche\model\AdminManager();
+    $showContacts=$adminManager->listContacts();
+    require('view/backEnd/contactView.php');
+}
 
 function listPosts($limitMax)
 {

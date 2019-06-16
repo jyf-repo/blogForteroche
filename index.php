@@ -30,7 +30,7 @@ try
             numberOfPosts();
             $limitMax=numberOfPosts();
             var_dump($limitMax);
-            $limit=4;
+            $limit=5;
             inscription($_POST['name'], $_POST['email'], $limit, $limitMax);
         }
         
@@ -38,7 +38,7 @@ try
         {
             numberOfPosts();
             $limitMax=numberOfPosts();
-            $limit=4;
+            $limit=5;
             listPosts($limit, $limitMax);
            
         }
@@ -48,7 +48,7 @@ try
     {
         numberOfPosts();
         $limitMax=numberOfPosts();
-        $limit=4;
+        $limit=5;
         listPosts($limit, $limitMax);
         
     }

@@ -1,7 +1,7 @@
 <?php $title='Billet simple pour l\'Alaska - Jean Forteroche' ?>
 <?php ob_start(); ?>
 
-  <h2>Articles publiés:</h2>
+  <h2>Les chapitres du livre:</h2>
     <table class="table table-hover"> 
     <tbody>
    

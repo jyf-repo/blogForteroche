@@ -6,12 +6,12 @@
     
     ?>
 <div class='fond'>
-    <div class="jumbotron p-4 p-md-5 text-white rounded bg-transparent">
+    <div class="jumbotron-fluid p-4 p-md-5 text-white rounded bg-transparent">
         
-        <div class="col-md-6 px-0">
-          <h1 class="display-4 font-italic">Voici le nouveau chapitre tant attendu: <?= $getPost['title'];?></h1>
-          <p class="lead my-3"> <em>Le <?= $getPost['date_creation'];?></em>
-            <?=substr(htmlspecialchars($getPost['content']),0,100)?> ... </p>
+        <div class="col-md-6 px-0 ">
+          <h2 class="display-3 "><span class="badge badge-secondary">Nouveau</span> <?= $getPost['title'];?></h2>
+          <p class="lead my-3 text-white font-weight-bold">
+           <?=substr(htmlspecialchars($getPost['content']),0,100)?> ... </p>
         
           <p class="lead mb-0"><a href="index.php?action=comment&amp;postId=<?=$getPost['id'] ?>" class="text-white font-weight-bold">Découvrir...</a></p>
         </div>
@@ -59,7 +59,7 @@
     <main role="main" class="container-fluid">
                 <div class="row">
                     <div class="col-md-8 blog-main">
-    <h3 class="display-5">Derniers articles publiés:</h3>
+    <h3 class="display-5">Chapitres récents:</h3>
     <table class="table table-hover"> 
     <tbody>
    
@@ -69,14 +69,20 @@ while ($dataPosts=$listPosts->fetch())
 {
 ?>
     <tr>
+        
         <td>
-            <a href="index.php?action=comment&amp;postId=<?=$dataPosts['id'] ?>"><h3><?=htmlspecialchars($dataPosts['title'])?></h3></a><em><?=htmlspecialchars($dataPosts['date_creation'])?></em><p><?=substr(htmlspecialchars($dataPosts['content']),0,50)?> ... </p>
-            <p>Lire la suite</p>
+            <div class="media position-relative">
+                
+                <div class="media-body">
+            <h3 class="card-title"><?=htmlspecialchars($dataPosts['title'])?></h3><em><?=htmlspecialchars($dataPosts['date_creation'])?></em><p class="card-text"><?=substr(htmlspecialchars($dataPosts['content']),0,50)?> ... </p>
+                <a href="index.php?action=comment&amp;postId=<?=$dataPosts['id'];?>" class=" stretched-link">Lire la suite</a>
+                    </div>
+                <img src="public/image/<?= $dataPosts['image'];?>" class="rounded float-right" width="150px">
+            </div>
         </td>
-        <td>
-            <img src="public/image/<?= $dataPosts['image'];?>" class="rounded float-right" width="150px">
-        </td>
-        </tr>
+        
+       
+    </tr>
 <?php
 }
 ?>
@@ -92,7 +98,7 @@ while ($dataPosts=$listPosts->fetch())
                           <input type="email" name="email" placeholder='Email'><br/>
                           <input type="submit" value="Envoyer">
                       </form>
-                    <p class="mb-0">Profitez des nouvelles parutions en avant premiere et des rendez-vous litteraires avec l'auteur.</p>
+                    <p class="mb-0">Profitez des nouvelles parutions en avant première et des rendez-vous litteraires avec Jean Forteroche.</p>
                   </div>
 
                   <div class="p-4">

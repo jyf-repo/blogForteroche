@@ -48,5 +48,5 @@
     <footer class="blog-footer">
     Ce site est totalement imaginaire <i class="far fa-copyright"></i> jyfweb
     </footer>
-    
+    </div>
 </html>

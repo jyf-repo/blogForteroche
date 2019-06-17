@@ -87,8 +87,8 @@ while ($dataPosts=$listPosts->fetch())
              else
              {
             ?>
-            <a role="button" class="btn btn-outline-success btn-sm" href="admin.php?action=showPost&amp;postId=<?=$dataPosts['id']?>&amp;visibility=0"><i class="fas fa-check"></i>
-            </a>
+            <P><i class="fas fa-check" style="color:green;"> En avant</i>
+            
             <?php
             }
             ?>

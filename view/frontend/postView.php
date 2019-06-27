@@ -92,7 +92,7 @@ while ($dataPosts=$listPosts->fetch())
                 
                 <aside class="col-md-4 blog-sidebar">
                   <div id="inscrire" class="p-4 mb-3 bg-light rounded">
-                    <h4 class="font-italic">S'inscrire</h4>
+                    <h4 class="font-italic">S'inscrire à la Newsletter</h4>
                       <form method="post" action='index.php?action=inscription'>
                           <input type="text" name="name" placeholder='Nom'><br/>
                           <input type="email" name="email" placeholder='Email'><br/>

@@ -5,4 +5,4 @@
 # acces au site par index.php
 
 
-# lien github: https://github.com/koalajymolo/blogForteroche
+# lien github: https://github.com/jyf-repo/blogForteroche
